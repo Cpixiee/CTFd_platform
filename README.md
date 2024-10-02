@@ -25,7 +25,10 @@ $ nano /etc/systemd/system/ctfd.service
 [This File](https://github.com/Cpixiee/CTFd_platform/blob/main/this_file.md)
 
 $ sudo systemctl daemon-reload
+
 $ sudo systemctl enable ctfd.service
+
 $ sudo systemctl start ctfd.service
+
 
 $ gunicorn3 --bind 0.0.0.0:8000 -w 4 "CTFd:create_app()"
