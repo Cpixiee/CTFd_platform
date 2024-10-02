@@ -16,4 +16,4 @@ ExecStop = /bin/kill -s TERM $MAINPID
 PrivateTmp = true
 
 [Install]
-WantedBy = multi-user.target```
+WantedBy = multi-user.target
