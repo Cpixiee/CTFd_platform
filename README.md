@@ -23,7 +23,7 @@ $ pip3 install gunicorn
 
 $ nano /etc/systemd/system/ctfd.service
 
-[Unit]
+```[Unit]
 Description = CTFd
 After = network.target
 
@@ -41,7 +41,7 @@ ExecStop = /bin/kill -s TERM $MAINPID
 PrivateTmp = true
 
 [Install]
-WantedBy = multi-user.target
+WantedBy = multi-user.target```
 
 $ sudo systemctl daemon-reload
 $ sudo systemctl enable ctfd.service
