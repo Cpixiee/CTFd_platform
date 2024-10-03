@@ -7,7 +7,6 @@ $ adduser ctfd
 $ su - ctfd
 
 $ apt install -y python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools nginx git
-pip3 install pipenv
 
 $ mkdir /var/log/CTFd
 
