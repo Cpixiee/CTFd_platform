@@ -1,15 +1,15 @@
-```import base64
+[Unit]
+Description=CTFd Service
+After=network.target
 
-# Input dari base64
-encoded_data = "Eg8Idnc6KSY2IC8dHDMuNik0LzIqNSgzLjYpHDEtNDtiOQ=="
-decoded_data = base64.b64decode(encoded_data)
+[Service]
+User=ctfd
+Group=ctfd
+WorkingDirectory=/path/to/your/ctfd
+ExecStart=/usr/bin/python3 /path/to/your/ctfd/serve.py
+Restart=always
+Environment="FLASK_ENV=production"
+Environment="PORT=8000"
 
-# Key untuk XOR
-key = b"key"  # Sesuaikan panjang kunci XOR dengan data
-
-# Lakukan XOR
-xor_result = bytes([a ^ b for a, b in zip(decoded_data, key * len(decoded_data))])
-
-# Format hasil dengan smk22{}
-result_string = f"smk22{{{xor_result.hex()}}}"
-print(result_string)
+[Install]
+WantedBy=multi-user.target
